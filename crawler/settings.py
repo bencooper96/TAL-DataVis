@@ -15,4 +15,3 @@ def init():
     link_collection_crawl_allowance = 30
     pages_crawled = 0
     table_name = datetime.now().strftime("episode_transcripts_%m_%d_%Y_%H_%M_%S")
-    
