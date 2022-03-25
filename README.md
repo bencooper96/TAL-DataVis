@@ -18,4 +18,4 @@ What you’re looking at here is a collection of visualizations built with {__IN
 
 And the crawler is just a bland python script that uses BeautifulSoup and Pandas
 
-If you want to check out more of my more of my work, you can check out [my website](www.bencooper.xyz)
+If you want to check out more of my more of my work, you can check out [my website](https://www.bencooper.xyz/)
