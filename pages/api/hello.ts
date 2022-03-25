@@ -5,8 +5,6 @@ export default async function handle(
 	req: NextApiRequest,
 	res: NextApiResponse
 ) {
-	const posts = await prisma[
-		"episode_transcripts_03_23_2022_15_40_26"
-	].findMany({});
-	res.json(posts);
+	const episodes = await prisma[process.env.name_of_table].count();
+	res.json(episodes);
 }
