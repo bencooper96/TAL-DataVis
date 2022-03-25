@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model episode_transcripts_03_23_2022_15_40_26 {
+  episode     Int     @id
+  act0_title  String?
+  act0_text   String?
+  act1_title  String?
+  act1_text   String?
+  act2_title  String?
+  act2_text   String?
+  act3_title  String?
+  act3_text   String?
+  act4_title  String?
+  act4_text   String?
+  act5_title  String?
+  act5_text   String?
+  act6_title  String?
+  act6_text   String?
+  act7_title  String?
+  act7_text   String?
+  act8_title  String?
+  act8_text   String?
+  act9_title  String?
+  act9_text   String?
+  act10_title String?
+  act10_text  String?
+  act11_title String?
+  act11_text  String?
+  act12_title String?
+  act12_text  String?
+  act13_title String?
+  act13_text  String?
+  act14_title String?
+  act14_text  String?
+  act15_title String?
+  act15_text  String?
+  act16_title String?
+  act16_text  String?
+  act17_title String?
+  act17_text  String?
+  act18_title String?
+  act18_text  String?
+  act19_title String?
+  act19_text  String?
+  act20_title String?
+  act20_text  String?
+}

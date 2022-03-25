@@ -1,13 +1,15 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from "next";
+// import prisma from '../../lib/prisma'
 
-type Data = {
-  name: string
-}
+// POST /api/user
+// Required fields in body: name, email
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  res.status(200).json({ name: 'John Doe' })
-}
+// export default async function handle(req: NextApiRequest, res: NextApiResponse) {
+//   const result = await prisma.user.create({
+//     data: {
+//       ...req.body,
+//     },
+//   })
+//   res.json(result)
+// }

@@ -1,0 +1,9 @@
+###### Requirements without Version Specifiers ######
+pandas
+numpy
+requests
+beautifulsoup4
+sqlalchemy
+python-dotenv
+psycopg2
+lxml
