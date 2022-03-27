@@ -11,9 +11,14 @@ const RandomSentence = ({ router }) => {
 
 	const getRandomSentence = async () => {
 		setLoading(true);
-		const url = `${process.env.ORIGIN}/api/randomSentence`;
+		// const url = `${process.env.ORIGIN}/api/randomSentence`;
+		const url =
+			process.env.NODE_ENV == "development"
+				? `http://localhost:3000/api/randomSentence`
+				: `https://tal-data-vis.vercel.app/api/randomSentence`;
 		try {
 			const resp = await fetch(url);
+			console.log(resp);
 			const body = await resp.json();
 			setRandomSentence(body.text);
 			setLoading(false);
@@ -25,6 +30,7 @@ const RandomSentence = ({ router }) => {
 
 	useEffect(() => {
 		getRandomSentence();
+		console.log(process.env.ORIGIN);
 	}, []);
 
 	function getNewSentence() {
