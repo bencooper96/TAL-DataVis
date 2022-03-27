@@ -1,4 +1,3 @@
-import { episode_transcripts_03_23_2022_15_40_26 } from "@prisma/client";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { prisma } from "../../lib/prisma";
 

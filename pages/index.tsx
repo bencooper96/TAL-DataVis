@@ -1,12 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Header } from "../components/Header";
+import { Header, Footer, Main } from "../components/page";
 import { VisContainer } from "../components/VisualizationContainer";
-import { RandomSentence } from "../components/visualizations/RandomSentence";
+import RandomSentence from "../components/visualizations/RandomSentence";
 
 const Home: NextPage = () => {
 	return (
-		<div>
+		<>
 			<Head>
 				<title>This American Life</title>
 				<meta
@@ -16,17 +16,17 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<main className="">
+			<Main>
 				<Header />
 				<div className="container px-2 mx-auto py-8 flex flex-col gap-8">
 					<VisContainer label="Random Sentence">
 						<RandomSentence />
 					</VisContainer>
 				</div>
-			</main>
+			</Main>
 
-			<footer></footer>
-		</div>
+			<Footer />
+		</>
 	);
 };
 

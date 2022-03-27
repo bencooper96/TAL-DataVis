@@ -1,16 +1,26 @@
 import { useEffect, useState } from "react";
 import { Button } from "../inputs";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import { randomSentence as randomSentenceAtom } from "../../recoil/atoms";
+import { withRouter } from "next/router";
 
-export const RandomSentence = () => {
+const RandomSentence = ({ router }) => {
 	const [randomSentence, setRandomSentence] =
 		useRecoilState(randomSentenceAtom);
+	const [isLoading, setLoading] = useState<boolean>(false);
+
 	const getRandomSentence = async () => {
-		const url = `http://localhost:3000/api/randomSentence`;
-		const resp = await fetch(url);
-		const body = await resp.json();
-		setRandomSentence(body.text);
+		setLoading(true);
+		const url = `${process.env.ORIGIN}/api/randomSentence`;
+		try {
+			const resp = await fetch(url);
+			const body = await resp.json();
+			setRandomSentence(body.text);
+			setLoading(false);
+		} catch (err) {
+			setRandomSentence("Something went wrong. Please shuffle again");
+			setLoading(false);
+		}
 	};
 
 	useEffect(() => {
@@ -22,9 +32,13 @@ export const RandomSentence = () => {
 	}
 
 	return (
-		<div className="grid justify-items-end">
+		<div className="grid justify-items-end gap-4">
 			<span className="w-full font-serif text-lg">{randomSentence}</span>
-			<Button onClick={getNewSentence}>Shuffle</Button>
+			<Button onClick={getNewSentence} disabled={isLoading}>
+				Shuffle
+			</Button>
 		</div>
 	);
 };
+
+export default withRouter(RandomSentence);
