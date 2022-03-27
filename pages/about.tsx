@@ -22,7 +22,7 @@ const Home: NextPage = () => {
 
 					<p>
 						This project doesn’t have too much to it.
-						<br /> Basically, I wanted to learn a new stack and figured this
+						<br /> Basically, I wanted to learn something new and figured this
 						could be a fun way to do so. What you’re looking at here is a
 						collection of visualizations of transcripts that I scraped from{" "}
 						<a
@@ -75,7 +75,7 @@ export default Home;
 
 const TechnologyTile = ({ name, link }: { name: string; link?: string }) => {
 	return (
-		<a href={link}>
+		<a href={link} target="_blank" rel="noopener noreferrer">
 			<div
 				className={`bg-primary text-white p-2 mx-auto rounded-full my-4 w-40 text-center ${
 					link && "hover:opacity-100"
