@@ -26,7 +26,11 @@ module.exports = {
 			"3xl": "5.063rem",
 			"4xl": "7.594rem",
 		},
-		// extend: {},
+		extend: {
+			spacing: {
+				400: "400px",
+			},
+		},
 	},
 	plugins: [],
 };

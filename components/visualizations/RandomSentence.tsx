@@ -3,6 +3,7 @@ import { Button } from "../inputs";
 import { useRecoilState } from "recoil";
 import { randomSentence as randomSentenceAtom } from "../../recoil/atoms";
 import { withRouter } from "next/router";
+import { apiPrefixedRoute } from "../../lib/utils";
 
 const RandomSentence = ({ router }) => {
 	const [randomSentence, setRandomSentence] =
@@ -11,14 +12,11 @@ const RandomSentence = ({ router }) => {
 
 	const getRandomSentence = async () => {
 		setLoading(true);
-		// const url = `${process.env.ORIGIN}/api/randomSentence`;
-		const url =
-			process.env.NODE_ENV == "development"
-				? `http://localhost:3000/api/randomSentence`
-				: `https://tal-data-vis.vercel.app/api/randomSentence`;
+
+		const url = apiPrefixedRoute("randomSentence");
+
 		try {
 			const resp = await fetch(url);
-			console.log(resp);
 			const body = await resp.json();
 			setRandomSentence(body.text);
 			setLoading(false);
@@ -30,7 +28,6 @@ const RandomSentence = ({ router }) => {
 
 	useEffect(() => {
 		getRandomSentence();
-		console.log(process.env.ORIGIN);
 	}, []);
 
 	function getNewSentence() {

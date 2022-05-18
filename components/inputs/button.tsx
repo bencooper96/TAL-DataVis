@@ -21,7 +21,7 @@ export const Button = ({
 				href={href}
 				target="_blank"
 				rel="noopener noreferrer"
-				className={` bg-black ${color}  ${
+				className={`bg-${color} ${
 					disabled ? "opacity-50" : ""
 				} px-4 py-2 rounded-md text-white font-medium ${className}`}
 			>
@@ -33,7 +33,7 @@ export const Button = ({
 		<button
 			onClick={onClick}
 			disabled={disabled}
-			className={` bg-${color}  ${
+			className={` bg-${color} ${
 				disabled ? "opacity-50" : ""
 			} px-4 py-2 rounded-md text-white font-medium ${className}`}
 		>

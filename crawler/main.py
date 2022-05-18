@@ -8,7 +8,7 @@ import re
 
 if __name__ == '__main__':
     settings.init()
-
+    
     more_links = True
     print("""
 ==============================
@@ -48,8 +48,7 @@ if __name__ == '__main__':
 
     # Loop over article links to get the transcript text back in a dict that includes the episode number
     # Then append the dict to the transcript array
-    transcript_arr = []
-    link_i = 0
+
 
     # Remove episodes for links that don't fit the standard format
     article_links = list(filter(lambda link: re.match('\/\d*\/', link), article_links))
@@ -62,6 +61,8 @@ if __name__ == '__main__':
 |                                     |
 ======================================= 
     """)
+    transcript_arr = []
+    link_i = 0
     for link in article_links:
         link_i += 1
         if settings.pages_crawled>=settings.crawl_allowance: # Safety Valve: If it goes over the crawl allowance, break the loop and move on to pushing to DB

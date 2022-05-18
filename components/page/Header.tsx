@@ -7,7 +7,7 @@ export const Header = () => {
 		<div className="w-full bg-primary py-4 px-2 md:px-4">
 			<div className="mx-auto md:flex justify-between ">
 				<h1 className="text-xl font-serif text-white ">
-					This American Life Experiment
+					This American Experiment
 				</h1>
 				{router.pathname == "/" ? (
 					<Link href="/about">
