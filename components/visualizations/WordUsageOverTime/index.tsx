@@ -52,10 +52,19 @@ const WordUsageOverTime = () => {
 		<div className="h-200">
 			{wordToSearch ? (
 				isLoading ? (
-					<WordUsageLoadingGame />
+					<>
+						<input
+							className="ml-14 h-min w-min px-3 py-2 rounded border border-gray-dark"
+							value={wordToSearch}
+							disabled
+						/>
+						<WordUsageLoadingGame />
+					</>
 				) : (
 					<>
 						<input
+							className="ml-14 h-min w-min px-3 py-2 rounded border border-gray-dark"
+							placeholder="Word to search"
 							defaultValue={wordToSearch}
 							onChange={(event) => handleSearch(event)}
 						/>

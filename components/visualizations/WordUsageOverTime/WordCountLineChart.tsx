@@ -10,11 +10,11 @@ import { wordCountData as wordCountDataAtom } from "../../../recoil/atoms";
 import { useRecoilState } from "recoil";
 
 export const WordUsageLineChart = () => {
-	const [wordCountData, setWordCountData] = useRecoilState(wordCountDataAtom);
+	const wordCountData = useRecoilState(wordCountDataAtom);
 	return (
 		<ResponsiveContainer width="100%" height={400}>
 			<LineChart
-				data={wordCountData}
+				data={wordCountData[0]}
 				margin={{ top: 20, right: 30, left: 0, bottom: 0 }}
 			>
 				<CartesianGrid stroke="#ccc" />

@@ -16,11 +16,12 @@ export const NoWordSelectedPage = () => {
 	return (
 		<div className="w-full h-400 grid place-items-center">
 			<div className="w-full grid place-items-center">
-				<h3 className="text-l text-gray px-1">
-					Enter a word you want to know the usage of over time:
+				<h3 className="font-serif text-lg px-1">
+					Enter a word to view its usage of over time:
 				</h3>
 				<input
-					className="h-min w-min"
+					className="h-min w-min px-3 py-2 rounded border border-gray-dark"
+					placeholder="Word to search"
 					onChange={(event) => handleSearch(event)}
 				/>
 			</div>
