@@ -42,7 +42,10 @@ const Home: NextPage = () => {
 								name="TailwindCSS"
 								link="https://tailwindcss.com/"
 							/>
-							<TechnologyTile name="recoil" link="https://recoiljs.org/" />
+							<TechnologyTile
+								name="Recharts"
+								link="https://recharts.org/en-US"
+							/>
 						</div>
 						<div className="w-full">
 							<h3 className="text-lg text-gray">Back End</h3>

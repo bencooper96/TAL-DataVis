@@ -12,7 +12,6 @@ const RandomSentence = ({ router }) => {
 
 	const getRandomSentence = async () => {
 		setLoading(true);
-
 		const url = apiPrefixedRoute("randomSentence");
 
 		try {
@@ -27,17 +26,15 @@ const RandomSentence = ({ router }) => {
 	};
 
 	useEffect(() => {
-		getRandomSentence();
+		if (!randomSentence) {
+			getRandomSentence();
+		}
 	}, []);
-
-	function getNewSentence() {
-		getRandomSentence();
-	}
 
 	return (
 		<div className="grid justify-items-end gap-4">
 			<span className="w-full font-serif text-lg">{randomSentence}</span>
-			<Button onClick={getNewSentence} disabled={isLoading}>
+			<Button onClick={getRandomSentence} disabled={isLoading}>
 				Shuffle
 			</Button>
 		</div>
